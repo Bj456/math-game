@@ -1,28 +1,54 @@
-let scoreDiv = 0;
-let currentDivQuestion = {};
+const option1 = document.getElementById("option1");
+const option2 = document.getElementById("option2");
+const option3 = document.getElementById("option3");
+const audio = document.getElementById("wrong");
+let answer = 0;
 
-function generateDivQuestion() {
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    const num1 = num2 * (Math.floor(Math.random() * 10) + 1); // num1 divisible by num2
-    currentDivQuestion = {
-        question: `${num1} ÷ ${num2} = ?`,
-        answer: num1 / num2
-    };
-    document.getElementById('question').innerText = currentDivQuestion.question;
-    document.getElementById('answer').value = '';
-    document.getElementById('feedback').innerText = '';
-}
+function generateEquation(){
+    let num2 = Math.floor(Math.random() * 12) + 1;
+    let num1 = num2 * (Math.floor(Math.random() * 12) + 1);
+    let dummyAnswer1 = Math.floor(Math.random() * 12) + 1;
+    let dummyAnswer2 = Math.floor(Math.random() * 12) + 1;
 
-function checkAnswer() {
-    const userAnswer = parseInt(document.getElementById('answer').value);
-    if (userAnswer === currentDivQuestion.answer) {
-        scoreDiv++;
-        document.getElementById('feedback').innerText = 'सही उत्तर! ✅';
-    } else {
-        document.getElementById('feedback').innerText = `गलत उत्तर! ❌ सही उत्तर: ${currentDivQuestion.answer}`;
+    answer = num1 / num2;
+
+    document.getElementById("num1").innerHTML = num1;
+    document.getElementById("num2").innerHTML = num2;
+
+    let allAnswers = [answer, dummyAnswer1, dummyAnswer2];
+    let switchAnswers = [];
+
+    for(i = allAnswers.length; i--;){
+        switchAnswers.push(allAnswers.splice(Math.floor(Math.random() * (i+1)), 1)[0]);
     }
-    document.getElementById('score').innerText = `स्कोर: ${scoreDiv}`;
-    generateDivQuestion();
+
+    option1.innerHTML = switchAnswers[0];
+    option2.innerHTML = switchAnswers[1];
+    option3.innerHTML = switchAnswers[2];
 }
 
-window.onload = generateDivQuestion;
+option1.addEventListener("click", function(){
+    if(parseInt(option1.innerHTML) === answer){
+        generateEquation();
+    } else {
+        audio.play();
+    }
+});
+
+option2.addEventListener("click", function(){
+    if(parseInt(option2.innerHTML) === answer){
+        generateEquation();
+    } else {
+        audio.play();
+    }
+});
+
+option3.addEventListener("click", function(){
+    if(parseInt(option3.innerHTML) === answer){
+        generateEquation();
+    } else {
+        audio.play();
+    }
+});
+
+generateEquation();
