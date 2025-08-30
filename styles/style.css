@@ -1,0 +1,79 @@
+/* styles/style.css */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff8dc;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    width: 350px;
+}
+
+h1 {
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #32cd32;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #228b22;
+}
+
+input {
+    padding: 10px;
+    width: 60%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #32cd32;
+    text-align: center;
+}
+
+#feedback {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+#score {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #1e90ff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffa500;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    background-color: #ff8c00;
+}
