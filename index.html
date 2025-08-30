@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हिंदी Math गेम</title>
+    <title>जोड़ खेल - Multiple Choice</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎉 हिंदी गणित खेल 🎉</h1>
-        <p>खेलने के लिए ऑपरेशन चुनें:</p>
-        <ul>
-            <li><a href="add.html">➕ जोड़ (Addition)</a></li>
-            <li><a href="subtract.html">➖ घटाव (Subtraction)</a></li>
-            <li><a href="multiply.html">✖️ गुणा (Multiplication)</a></li>
-            <li><a href="divide.html">➗ भाग (Division)</a></li>
-        </ul>
+        <h1>➕ जोड़ खेल</h1>
+        <div class="equation">
+            <span id="num1"></span> + <span id="num2"></span> = ?
+        </div>
+        <div class="options">
+            <button id="option1"></button>
+            <button id="option2"></button>
+            <button id="option3"></button>
+        </div>
+        <audio id="wrong" src="audio/wrong.mp3"></audio>
+        <br>
+        <a href="index.html">🏠 मुख्य पृष्ठ पर जाएँ</a>
     </div>
+    <script src="script/mcq-add.js"></script>
 </body>
 </html>
